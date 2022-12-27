@@ -195,6 +195,15 @@ body {
   .header p {
     text-align: center;
     margin-top: 20px;
+    font-size: 15px;
+  }
+  .header h1 {
+    font-size: 30px;
+  }
+  .header img {
+    width: 30px;
+    margin-left: 10px;
+    margin-bottom: 15px;
   }
 }
 </style>
