@@ -1,53 +1,53 @@
 <script>
-  export default {
-    data() {
-      return {
-        moviesData: null,
-        getDate: null,
-        Date: null
 
-      }
-    },
-    methods: {
-      async getData() {
-        const res = await 
-            fetch("https://api.themoviedb.org/3/movie/popular?api_key=335c8b87f473d98341300a6547090fa1");
-        const finalRes = await res.json();
-        this.moviesData = finalRes.results;
-      }
-    },
-    mounted() {
-      this.getData()
-    },
-  }
-  
+export default {
+  data() {
+    return {
+      moviesData: null,
+      getDate: null,
+      Date: null
+    }
+  },
+  methods: {
+    async getData() {
+      const res = await 
+          fetch("https://api.themoviedb.org/3/movie/popular?api_key=335c8b87f473d98341300a6547090fa1");
+      const finalRes = await res.json();
+      this.moviesData = finalRes.results;
+    }
+  },
+  mounted() {
+    this.getData()
+  },
+}
 
 </script>
 
 <template>
-<div class="container">
-  <div class="header mt-4">
-    <h1>
-      Trending Movies
-      <img src="../public/xicon.png" alt="">
-    </h1>
-    <p>Keep up with the honest movies that are trending this week.</p>
-  </div>
+  <div class="container">
 
-  <section class="nav-link">
-    <button class="btn btn-info">
-      Trending today
-    </button>
-    <button class="btn btn-info">
-      This week
-    </button>
-  </section>
+    <div class="header mt-4">
+      <h1>
+        Trending Movies
+        <img src="../public/xicon.png" alt="">
+      </h1>
+      <p>Keep up with the honest movies that are trending this week.</p>
+    </div>
 
-  <section class="content">
-    <div class="container">
-      <div class="row row-items">
-        <div class="col-sm-1 col-md-4 col-lg-3 mb-3" v-for="movie in moviesData" :key="movie.id">
-          <img :src="'https://image.tmdb.org/t/p/original/' + movie.poster_path" class="img-fluid">
+    <section class="nav-link">
+      <button class="btn btn-info">
+        Trending today
+      </button>
+      <button class="btn btn-info">
+        This week
+      </button>
+    </section>
+
+    <section class="content">
+      <div class="container">
+        <div class="row row-items">
+          <div class="col-sm-1 col-md-4 col-lg-3 mb-3" v-for="movie in moviesData" :key="movie.id">
+            <img :src="'https://image.tmdb.org/t/p/original/' + movie.poster_path" class="img-fluid">
             <div class="mv-info">
               <span class="span-hover">{{ movie.original_title }}</span>
               <div class="status">
@@ -69,12 +69,12 @@
                 <i class="ri-play-line smallBtn"></i>
               </div> 
             </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-</div>
+  </div>
 </template>
 
 <style>
