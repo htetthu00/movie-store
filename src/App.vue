@@ -205,5 +205,9 @@ body {
     margin-left: 10px;
     margin-bottom: 15px;
   }
+  .nav-link button {
+    font-size: 13px;
+    padding: 6px;
+  }
 }
 </style>
