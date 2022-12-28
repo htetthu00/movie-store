@@ -34,11 +34,11 @@
                     />
                     <div class="mv-info">
                         <div class="mv-title">
-                            <span class="span-hover">{{ movie.original_title }}</span>
+                            <span class="span-hover pointer">{{ movie.original_title }}</span>
                         </div>
                         <div class="status">
                             <span>
-                            <i class="ri-heart-line"></i>
+                            <i class="ri-heart-line pointer"></i>
                             </span>
                             <span class="rating">{{ "Rating " + movie.vote_average }}</span>
                         </div>
@@ -211,12 +211,8 @@ export default {
   transition: 1s;
 }
 
-.content img {
-  cursor: pointer;
-}
-
-.content span {
-  cursor: pointer;
+.pointer {
+    cursor: pointer
 }
 
 .status i {
@@ -253,17 +249,6 @@ export default {
   cursor: pointer;
 }
 
-/** p */
-
-
-
-
-
-
-/* .page-item {
-  background-color: rgb(0, 41, 48);
-} */
-
 @media (max-width: 576px) {
   .header p {
     text-align: center;
@@ -282,5 +267,16 @@ export default {
     font-size: 13px;
     padding: 6px;
   }
+
+}
+
+@media (max-width: 330px) {
+    .pages {
+        display: flex;
+        justify-content: end;
+        margin-top: 0px;
+        margin-bottom: 10px;
+        max-height: 60px;
+    }
 }
 </style>
